@@ -42,8 +42,8 @@ namespace TupleAndDepartmentApp
                     case "2":
                         Console.Write("axtaris ucun ad daxil edin: ");
                         string searchedName = Console.ReadLine();
-                       
-                        department.SearchWorker(searchedName);
+
+                        department.SearchWorker(searchedName.Trim());
                         break;
                     case "3":
                         string maxSearchedExper;
@@ -116,13 +116,19 @@ namespace TupleAndDepartmentApp
 
             double experience;
             string experStr;
+            bool parseExperience;
 
             do
             {
-                Console.Write("Iscinin tecrubesini daxil edin:");
+                Console.Write("Iscinin tecrubesini daxil edin: ");
                 experStr = Console.ReadLine();
+                parseExperience = double.TryParse(experStr, out experience);
+                if (!parseExperience)
+                {
+                    Console.WriteLine("Iscinin Tecrubesi duzgun daxil edin");
+                }
 
-            } while (!double.TryParse(experStr, out experience));
+            } while (!parseExperience);
 
             Worker worker = new Worker(workerName.Trim(), workerSurname.Trim(), experience);
 

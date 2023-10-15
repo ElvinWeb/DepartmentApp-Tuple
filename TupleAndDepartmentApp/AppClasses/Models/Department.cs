@@ -36,7 +36,7 @@ namespace AppClasses.Models
                 }
             }
 
-            ShowAllFilteredWorkers(searchedWorkers);
+            ShowAllWorkers(searchedWorkers);
 
             return searchedWorkers;
         }
@@ -50,13 +50,13 @@ namespace AppClasses.Models
                     AddWorker(ref searchedWorkers, worker);
                 }
             }
-            ShowAllFilteredWorkers(searchedWorkers);
+            ShowAllWorkers(searchedWorkers);
 
             return searchedWorkers;
         }
 
 
-        public void ShowAllFilteredWorkers(Worker[] workersArr)
+        public void ShowAllWorkers(Worker[] workersArr)
         {
             foreach (Worker worker in workersArr)
             {

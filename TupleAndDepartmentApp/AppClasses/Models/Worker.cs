@@ -21,6 +21,11 @@ namespace AppClasses.Models
                 {
                     this._experience = value;
                 }
+                else
+                {
+                    Console.WriteLine("Tecrube menfi ve ya sifir ola bilmez");
+                }
+                
 
             }
         }
